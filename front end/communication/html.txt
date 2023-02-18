@@ -1,0 +1,13 @@
+<div id="email-template">
+  <h1>Event Update</h1>
+  <p>Dear {{name}},</p>
+  <p>We would like to inform you that there have been some changes to the event you registered for. Please see the updated details below:</p>
+  <ul>
+    <li><strong>Event Name:</strong> {{event_name}}</li>
+    <li><strong>Date:</strong> {{event_date}}</li>
+    <li><strong>Time:</strong> {{event_time}}</li>
+    <li><strong>Location:</strong> {{event_location}}</li>
+  </ul>
+  <p>If you have any questions or concerns, please contact us at {{contact_email}}.</p>
+  <p>Thank you for your participation in our event.</p>
+</div>

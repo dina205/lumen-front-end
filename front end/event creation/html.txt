@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Event</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Create Event</h1>
+  </header>
+  <main>
+    <form action="submit-event.php" method="post">
+      <label for="event-name">Event Name:</label>
+      <input type="text" id="event-name" name="event-name" required>
+
+      <label for="event-description">Event Description:</label>
+      <textarea id="event-description" name="event-description" required></textarea>
+
+      <label for="event-date-time">Date & Time:</label>
+      <input type="datetime-local" id="event-date-time" name="event-date-time" required>
+
+      <h2>Organizer Contact Details:</h2>
+      <label for="organizer-name">Name:</label>
+      <input type="text" id="organizer-name" name="organizer-name" required>
+
+      <label for="organizer-gender">Gender:</label>
+      <select id="organizer-gender" name="organizer-gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="organizer-email">Email:</label>
+      <input type="email" id="organizer-email" name="organizer-email" required>
+
+      <label for="organizer-mobile">Mobile:</label>
+      <input type="tel" id="organizer-mobile" name="organizer-mobile" required>
+
+      <label for="organizer-address">Address:</label>
+      <textarea id="organizer-address" name="organizer-address" required></textarea>
+
+      <h2>Type of Event:</h2>
+      <label for="event-type">Event Type:</label>
+      <select id="event-type" name="event-type" required>
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+      </select>
+
+      <div id="event-location" class="hidden">
+        <label for="event-location-input">Location:</label>
+        <input type="text" id="event-location-input" name="event-location-input">
+      </div>
+
+      <div id="event-url" class="hidden">
+        <label for="event-url-input">URL:</label>
+        <input type="url" id="event-url-input" name="event-url-input">
+      </div>
+
+      <script>
+        var eventTypeSelect = document.getElementById('event-type');
+        var eventLocationDiv = document.getElementById('event-location');
+        var eventUrlDiv = document.getElementById('event-url');
+
+        eventTypeSelect.addEventListener('change', function() {
+          if (eventTypeSelect.value === 'offline') {
+            eventLocationDiv.classList.remove('hidden');
+            eventUrlDiv.classList.add('hidden');
+          } else if (eventTypeSelect.value === 'online') {
+            eventLocationDiv.classList.add('hidden');
+            eventUrlDiv.classList.remove('hidden');
+          }
+        });
+      </script>
+
+      <label for="seats-available">Number of Seats Available:</label>
+      <input type="number" id="seats-available" name="seats-available" required>
+
+      <input type="submit" value="Create Event">
+    </form>
+  </main>
