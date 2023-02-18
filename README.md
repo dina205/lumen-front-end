@@ -1,4 +1,4 @@
-# lumen-front-end
+# lumen-event managment
 full front end with data
  Included 5 key features for the event creation with details of content as follows
 Event Creation: The system should allow users to create events by providing event details such as name, description, date, time, venue, capacity, etc. 
