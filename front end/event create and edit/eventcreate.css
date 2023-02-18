@@ -1,0 +1,15 @@
+#event-form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+  }
+  
+  #event-form input {
+    margin-bottom: 10px;
+  }
+  
+  #submit-event {
+    margin-top: 10px;
+  }
+  
